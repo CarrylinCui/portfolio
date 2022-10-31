@@ -261,7 +261,7 @@ img {
 .card-project {
     border: 1px var(--color-dark-bg) solid;
     background-color: var(--color-dark-bg);
-    height: 520px;
+    height: 509px;
 }
 
 .card-project .card-project-image img {

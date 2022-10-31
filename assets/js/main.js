@@ -1,3 +1,4 @@
+
 function btnClick() {
-    alert(0)
+    alert('Still completing the function now, please email or text me.\nThank you very much.')
 }
