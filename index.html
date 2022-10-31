@@ -1,432 +1,353 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;1,500&display=swap');
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7246d3b3b3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
+:root {
+    --color-body-dark: #1b1f1b;
+    --color-dark-font: rgb(207, 202, 202);
+    --color-dark-sec: #eea5a7;
+    --color-dark-bg: #373837;
 
-<body data-bs-spy="scroll" data-bs-target=".navbar">
+    --font-family: Kanit, sans-serif;
+    --sidebar-width: 250px;
+}
 
-    <!--Nav-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container flex-lg-column">
-            <img src="./assets/images/avatar.jpg" alt="no picture" class="d-none d-lg-block rounded-circle" />
-            <a class="navbar-brand mx-lg-auto mt-lg-4 h2 fw-bold" href="#home">
-                Carrylin Cui
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#project">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!--Nav-->
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-body-dark);
+    color: var(--color-dark-font);
+}
 
-    <!--content-->
-    <div class="content-wrapper">
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-dark-sec);
 
-        <!--home-->
-        <section id="home" class="full-height">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <h1 class="display-5" data-aos="fade-up" data-aos-duration="1000">
-                            <div>
-                                <span>Hello</span> !
-                            </div>
-                            Welcome to My <span> World</span> !
-                        </h1>
-                        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                            I am <span>Carrylin Cui</span>,
-                            graduated in
-                            <span>
-                                <i class="fas fa-sharp fa-solid fa-graduation-cap fa-flip"></i>
-                                computing science
-                            </span> . <br />
-                            I want to be a <span>Front-End Web Developer</span>, and here are the websites you can
-                            browse by scrolling down.
-                            Also, I have learned <span>Back-End </span>Development, and made the <span>Full-Stack
-                            </span> project independently.<br />
-                            Although having none work experience, I am really passionate about
-                            <span>programming
-                                <i class="fa-solid fa-laptop-code fa-beat"></i></span>.<br />
-                            I am ready to work and explore more in this field.
-                            <span><i class="fas fa-solid fa-person-running fa-lg fa-shake"></i></span>
-                        </p>
-                    </div>
-                </div>
+}
 
-                <div class="btn-dl" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
-                    <button class="btn-cv fw-bold">Download CV
-                        <i class="fas fa-solid fa-download fa-xl"></i>
-                    </button>
-                </div>
+a {
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
 
-            </div>
-        </section>
+span {
+    color: var(--color-dark-sec);
+    font-weight: bold;
+}
 
-        <!--education-->
-        <section id="education" class="full-height">
+img {
+    width: 100%;
+}
 
-            <div class="heading" data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="fw-bolder">Education:</h1>
-            </div>
+.full-height {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-            <div class="verline" data-aos="fade-up" data-aos-duration="1500"></div>
+/* Navbar*/
 
-            <div class="timeline-items">
-                <div class="timeline-item">
-                    <div class="timeline-dot dot-odd" data-aos="fade-up" data-aos-duration="1500"></div>
-                    <div class="timeline-date" data-aos="fade-up" data-aos-duration="1500">2015-2019</div>
+@media(min-width:992px) {
+    .navbar {
+        min-height: 100vh;
+        width: var(--sidebar-width);
+    }
 
-                    <div class="timeline-content" data-aos="fade-up" data-aos-duration="1500">
-                        <h4 class="fw-bold">Bachelor of Software Engineering </h4>
-                        <p>Shandong University, Weihai, Shandong, China</p>
-                        <p>Made the projects in <span>C, JAVA</span>,
-                            with<span> HTML, CSS, SQL.</span>
-                            <br />
-                            Also learned <span>Linux, Unity, Spring MVC</span>.
-                        </p>
-                    </div>
-                </div>
+    .content-wrapper {
+        padding-left: 300px;
 
-                <div class="timeline-item">
-                    <div class="timeline-dot dot-even" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                    </div>
-                    <div class="timeline-date" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                        2021-2022</div>
-
-                    <div class="timeline-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                        <h4 class="fw-bold">Master of Computing Science</h4>
-                        <p>University of Glasgow, Glasgow, Scotland, United Kingdom</p>
-                        <p>Made the projects in <span>Python</span>, using the <span>Django</span> framework, with
-                            <span>HTML, CSS,
-                                JavaScript, jQuery, AJAX, IMDb API.
-                            </span>
-                            <br />
-                            Also learned <span>Git</span>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--skills-->
-        <section id="skills" class="full-height my-sm-5 ms-sm-5">
-
-            <div class="heading" data-aos="fade-up" data-aos-duration="2000">
-                <h1 class="fw-bolder">Skills:</h1>
-            </div>
-
-            <div class="row">
-                <div class="card col-lg-2" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="500">
-                    <img src="./assets/images/logoReact.png" class="card-img-top " alt="...">
-                    <div class="card-body">
-                        <h4>React</h4>
-                    </div>
-                </div>
-                <div class="card col-lg-2" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="500">
-                    <img src="./assets/images/logoJS.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4>JavaScript</h4>
-                    </div>
-                </div>
-                <div class="card col-lg-2" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="500">
-                    <img src="./assets/images/logoHTML.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4>HTML</h4>
-                    </div>
-                </div>
-                <div class="card col-lg-2" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="500">
-                    <img src="./assets/images/logoCSS.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4>CSS</h4>
-                    </div>
-                </div>
-                <div class="card col-lg-4" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="500">
-                    <img src="./assets/images/logoBp.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4>Boostrap</h4>
-                    </div>
-                </div>
-                <div class="card col-lg-2" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="1000">
-                    <img src="./assets/images/logoPython.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4>Python</h4>
-                    </div>
-                </div>
-                <div class="card col-lg-2" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="1000">
-                    <img src="./assets/images/logoDj.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4>Django</h4>
-                    </div>
-                </div>
-                <div class="card col-lg-2" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="1000">
-                    <img src="./assets/images/logoJAVA.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4>JAVA</h4>
-                    </div>
-                </div>
-                <div class="card col-lg-2" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="1000">
-                    <img src="./assets/images/logoSQL.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4>SQL</h4>
-                    </div>
-                </div>
-                <div class="card col-lg-4" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="1000">
-                    <img src="./assets/images/logoLinux.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4>Linux</h4>
-                    </div>
-                </div>
-            </div>
+    }
+}
 
 
+.navbar {
+    background: linear-gradient(#040C04, #373837);
+}
 
-        </section>
+.navbar span {
+    color: var(--color-dark-sec)
+}
 
-        <!--project-->
-        <section id="project" class="full-height my-sm-5 ms-sm-5">
+.navbar a {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-dark-sec);
+}
 
-            <div class="heading" data-aos="fade-up" data-aos-duration="2000">
-                <h1 class="fw-bolder">Projects:</h1>
-            </div>
+.navbar a:hover {
+    font-weight: 1000;
+    transform: translateY(-1px);
+    color: var(--color-dark-sec);
+}
 
-            <div class="row me-5">
-                <div class="col-md-4">
-                    <a href="https://youtu.be/BF_61257zbs">
-                        <div class="card-project rounded-4 shadow-effect p-3 mt-4" data-aos="zoom-in-up"
-                            data-aos-duration="2000" data-aos-delay="500">
-                            <div class="card-project-image rounded-4">
-                                <img src="./assets/images/e-commerce.png" alt="no picture">
-                            </div>
-                            <div class="card-project-content">
-                                <h4>E-Commerce Website</h4>
-                                <p>Bulit a website that allows customers to order coffee beans,
-                                    add the items into the shopping cart from the home page,
-                                    and then they can add or remove the items in the cart. </p>
-                                <h6>React, Commerce.js, Bootstrap, CSS, HTML.</h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+.navbar a:active {
+    color: var(--color-dark-sec);
+}
 
-                <div class="col-md-4">
-                    <a href="https://youtu.be/nat91VcoYTk">
-                        <div class="card-project rounded-4 shadow-effect p-3 mt-4" data-aos="zoom-in-up"
-                            data-aos-duration="2000" data-aos-delay="1000">
-                            <div class="card-project-image rounded-4">
-                                <img src="./assets/images/web-forum.png" alt="no picture">
-                            </div>
-                            <div class="card-project-content">
-                                <h4>Full Stack Web Forum Website</h4>
-                                <p>Built a website that allows users to publish the post, and make
-                                    reviews after browsing the posts in five-star rating approach and binary-visual
-                                    rating
-                                    approach.<br />
-                                    Also, every user has a reputation value, which can influence the rate of the
-                                    posts.<br />
-                                    Users can change their avatar by clicking the image easily.
-                                </p>
-                                <h6>Python, Django, JavaScript, jQuery, AJAX, HTML, CSS.</h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+.navbar a::after {
+    color: var(--color-dark-sec);
+}
 
-                <div class="col-md-4">
-                    <a href="https://youtu.be/gpQcLJtnfIs">
-                        <div class="card-project rounded-4 shadow-effect p-3 mt-4" data-aos="zoom-in-up"
-                            data-aos-duration="2000" data-aos-delay="1500">
-                            <div class="card-project-image rounded-4">
-                                <img src="./assets/images/movie-world.png" alt="no picture">
-                            </div>
-                            <div class="card-project-content">
-                                <h4>Full Stack Movie Rating System</h4>
-                                <p>Built a website that allows users to search a movie and make a review to it.<br />
-                                    This system applies the IMDb API.<br />
-                                    Also, users can browse the reviews according to the different genres, and languages,
-                                    and
-                                    also sorted by the initial of the title and rated time sequence.
-                                </p>
-                                <h6>Python, Django, IMDb API, JavaScript, jQuery, AJAX, HTML, CSS.</h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
+/* home */
 
-        <!--contact-->
-        <section id="contact" class="full-height me-lg-5 mx-xs-5">
+#home span {
+    font-weight: 500px;
+}
 
-            <div class="heading" data-aos="fade-up" data-aos-duration="2000">
-                <h1 class="fw-bolder">Contact:</h1>
-            </div>
+#home h1 {
+    color: var(--color-dark-font);
+}
 
-            <div class="contact-container row">
-                <div class="left-contact col-lg-6 mt-3" data-aos="fade-up" data-aos-duration="2000"
-                    data-aos-delay="500">
+.btn-cv {
+    color: white;
+    border-color: var(--color-dark-sec);
+    border-radius: 300px;
+    background-color: var(--color-dark);
+    height: 35px;
+    width: 170px;
+    position: relative;
+}
 
-                    <div>
-                        If you have any questions about my application,<br />
-                        please do not hesitate to contact me.
-                    </div>
+.btn-cv i {
+    margin-right: -6px;
+    color: white;
+    border-color: var(--color-dark-sec);
+}
 
-                    <div class="contact-item row mt-3">
-                        <div class="col-6">
-                            <i class="fas fa-location-dot"></i>
-                            Location:
-                        </div>
-                        <div class="col-6">
-                            <p>London, United Kingdom</p>
-                        </div>
-                    </div>
+.btn-cv::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-dark-sec);
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    transition: all .6s ease;
+    border-radius: 300px;
+}
 
-                    <div class="contact-item row">
-                        <div class="col-6">
-                            <i class="fas fa-light fa-envelope"></i>
-                            Email:
-                        </div>
-                        <div class="col-6">
-                            <p>carrylin.cui@gmail.com</p>
-                        </div>
-                    </div>
+.btn-cv:hover::after {
+    width: 100%;
+    opacity: 100%;
+}
 
-                    <div class="contact-item row">
-                        <div class="col-6">
-                            <i class="fas fa-solid fa-phone"></i>
-                            Phone:
-                        </div>
-                        <div class="col-6">
-                            <p>44+ 07502301277</p>
-                        </div>
-                    </div>
+/* education */
 
-                    <div class="contact-item row">
-                        <div class="col-6">
-                            <i class="fas fa-light fa-globe"></i>
-                            Language:
-                        </div>
-                        <div class="col-6">
-                            <p>English, Chinese, Korean</p>
-                        </div>
-                    </div>
+#education {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-                    <div class="contact-link">
-                        <div class="link-icon">
-                            <a href="https://www.linkedin.com/in/carrylin-cui/">
-                                <i class="fas fa-brands fa-linkedin fa-lg"></i>
-                            </a>
-                        </div>
+.timeline-items {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
 
-                        <div class="link-icon">
-                            <a href="https://www.facebook.com/profile.php?id=100072208987623">
-                                <i class="fas fa-brands fa-facebook fa-lg"></i>
-                            </a>
-                        </div>
-
-                        <div class="link-icon">
-                            <a href="https://www.youtube.com/channel/UCkykCnKez5tebv1CvMEM5nw">
-                                <i class="fas fa-brands fa-youtube fa-lg"></i>
-                            </a>
-                        </div>
-
-                        <div class="link-icon">
-                            <a href="#contact">
-                                <i class="fas fa-brands fa-twitter fa-lg"></i>
-                            </a>
-                        </div>
-
-                        <div class="link-icon">
-                            <a href="#contact">
-                                <i class="fas fa-brands fa-instagram fa-lg"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="right-contact col-lg-6 mt-3">
-                    <div class="row justify-content-center">
-                        <div class="" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000">
-                            <form action='#contact' class="row g-4">
-                                <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" placeholder="Enter the name">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" placeholder="Enter the email">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Enter the subject" />
-                                </div>
-                                <div class="form-group col-12">
-                                    <textarea name="message" rows="5" class="form-control"
-                                        placeholder="Enter the message"></textarea>
-                                </div>
-                                <div class="form-group col-12">
-                                    <button type="submit" class="btn btn-contact" onclick="btnClick()">Contact
-                                        Me</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+.timeline-item {
+    margin-bottom: 40px;
+    width: 100%;
+}
 
 
-        </section>
+.timeline-item:nth-child(odd) {
+    padding-right: 56%;
+    text-align: right;
+}
 
-        <!--footer-->
-        <footer>
-            <div class="my-4">
-                <hr>
-            </div>
-            <div class="px-5 mb-5">
-                <span>Copyright text goes here.</span>
-            </div>
-        </footer>
+.timeline-item:nth-child(even) {
+    padding-left: 51%;
+}
 
-    </div>
-    <!--content-->
+.timeline-dot {
+    width: 25px;
+    height: 25px;
+    background-color: var(--color-dark-font);
+    border-radius: 50%;
+}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <stript src="./assets/js/main.js"></stript>
-    <script>
-        AOS.init();
-    </script>
-    <script>
-        function btnClick() {
-            alert('Still completing the function now, please email or text me, Thank you very much.')
-        }
-    </script>
+.dot-odd {
+    float: right;
+    margin-right: -12%;
+}
 
-</body>
+.dot-even {
+    position: absolute;
+    margin-left: -5%;
+}
 
-</html>
+@media(max-width:992px) {
+
+    .dot-odd {
+        margin-right: -12%;
+    }
+
+    .dot-even {
+        margin-left: -5%;
+    }
+
+    .verline {
+        margin-left: 47%;
+        margin-top: 45%;
+        margin-bottom: 400px;
+    }
+}
+
+@media(min-width:992px) {
+
+    .dot-odd {
+        margin-right: -42px;
+    }
+
+    .dot-even {
+        margin-left: -50px;
+    }
+
+    .verline {
+        margin-left: 38%;
+        margin-top: 30%;
+        margin-bottom: 400px;
+    }
+}
+
+.timeline-content {
+    background-color: var(--color-dark-bg);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.verline {
+    width: 1px;
+    height: 70%;
+    background-color: var(--color-dark-sec);
+    border: var(--color-dark-sec) solid 3px;
+    position: absolute;
+}
+
+/* skills */
+
+#skills .card {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: var(--color-dark-bg);
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+#skills img {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 18px;
+    margin-bottom: -10px;
+    border-radius: 50%;
+}
+
+#skills h4 {
+    text-align: center;
+    color: var(--color-dark-font);
+}
+
+/* project */
+
+.card-project {
+    border: 1px var(--color-dark-bg) solid;
+    background-color: var(--color-dark-bg);
+    height: 509px;
+}
+
+.card-project .card-project-image img {
+    transition: all 0.5s ease;
+}
+
+.card-project:hover .card-project-image img {
+    transform: scale(1.2);
+}
+
+.card-project .card-project-image {
+    overflow: hidden;
+}
+
+.card-project h4 {
+    margin-top: 15px;
+    margin-left: 10px;
+
+}
+
+.card-project:hover h4 {
+    transform: scale(1.1);
+}
+
+.shadow-effect {
+    transition: all 0.5s;
+}
+
+.shadow-effect:hover {
+    box-shadow: -7px 7px 0 0 var(--color-dark-sec);
+}
+
+#project a p {
+    color: var(--color-dark-font);
+}
+
+/* contact */
+#contact i,
+#contact p {
+    color: var(--color-dark-sec)
+}
+
+#contact a i:hover {
+    transform: scale(1.2);
+}
+
+.link-icon {
+    float: left;
+    padding: 15px 10px;
+}
+
+.form-control {
+    background-color: var(--color-dark-bg);
+    border-color: var(--color-dark-sec);
+}
+
+#contact .form-control:focus {
+    border-width: 2px;
+    border-color: var(--color-dark-sec);
+    background-color: var(--color-dark-bg);
+}
+
+#contact .form-control input {
+    height: 50px;
+    border-color: var(--color-dark-bg);
+}
+
+#contact input {
+    color: white;
+}
+
+.btn-contact {
+    border-color: var(--color-dark-sec);
+    background-color: var(--color-dark-sec);
+    color: white;
+    font-weight: 1000;
+}
+
+.btn:hover {
+    border-color: var(--color-dark-sec);
+    background-color: var(--color-dark-sec);
+    transform: scale(1.1);
+    color: white;
+}
+
+.btn:active {
+    border-color: var(--color-dark-sec);
+    background-color: var(--color-dark-sec);
+}
